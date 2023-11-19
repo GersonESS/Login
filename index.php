@@ -1,4 +1,4 @@
-parei 7:34
+
 
 <?php
 // fazer conexão e consulta no banco
@@ -6,8 +6,10 @@ $email_BD = "gerson@gmail.com";
 $senha_BD = 123;
 if (isset($_POST['bt_logar']))
 {
+    session_start();
     $email = $_POST['email'];
     $senha = $_POST['senha'];
+    $_SESSION['email'] = $email;
     // verificar se osdados do formulario é = do BD
     if($email == $email_BD && $senha == $senha_BD)
     {
